@@ -165,7 +165,7 @@ export default function Home() {
                 title={p.title}
                 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill={getStarColor(p.difficulty)} stroke={getStarColor(p.difficulty)}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill={getStarColor(p.difficulty)} stroke={getStarColor(p.difficulty)}>
                   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                 </svg>
                 <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.title}</span>
@@ -185,7 +185,7 @@ export default function Home() {
           </div>
           <div className="pane-content">
             <h1 className="problem-title" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill={getStarColor(problem.difficulty)} stroke={getStarColor(problem.difficulty)}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill={getStarColor(problem.difficulty)} stroke={getStarColor(problem.difficulty)}>
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
               </svg>
               {problem.title}

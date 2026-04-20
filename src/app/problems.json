@@ -74,7 +74,7 @@
   },
   {
     "id": 3,
-    "title": "177. Nth Highest Salary",
+    "title": "3. Nth Highest Salary",
     "difficulty": "Medium",
     "category": "Database",
     "description": "<p>Write a SQL query to get the nth highest salary from the <code>Employee</code> table.</p><p>If there is no nth highest salary, then the query should return <code>null</code>.</p>",
@@ -98,7 +98,7 @@
   },
   {
     "id": 4,
-    "title": "178. Rank Scores",
+    "title": "4. Rank Scores",
     "difficulty": "Medium",
     "category": "Database",
     "description": "<p>Write a SQL query to rank scores. If there is a tie between two scores, both should have the same ranking. Note that after a tie, the next ranking number should be the next consecutive integer value. In other words, there should be no \"holes\" between ranks.</p>",
@@ -122,7 +122,7 @@
   },
   {
     "id": 5,
-    "title": "180. Consecutive Numbers",
+    "title": "5. Consecutive Numbers",
     "difficulty": "Medium",
     "category": "Database",
     "description": "<p>Write a SQL query to find all numbers that appear at least three times consecutively.</p>",
@@ -146,7 +146,7 @@
   },
   {
     "id": 6,
-    "title": "181. Employees Earning More Than Their Managers",
+    "title": "6. Employees Earning More Than Their Managers",
     "difficulty": "Easy",
     "category": "Database",
     "description": "<p>Write a SQL query that finds out employees who earn more than their managers. In the <code>Employee</code> table, every employee has an Id, and there is also a column for the manager Id.</p>",
@@ -178,7 +178,7 @@
   },
   {
     "id": 7,
-    "title": "182. Duplicate Emails",
+    "title": "7. Duplicate Emails",
     "difficulty": "Easy",
     "category": "Database",
     "description": "<p>Write a SQL query to find all duplicate emails in a table named <code>Person</code>.</p>",
@@ -202,7 +202,7 @@
   },
   {
     "id": 8,
-    "title": "183. Customers Who Never Order",
+    "title": "8. Customers Who Never Order",
     "difficulty": "Easy",
     "category": "Database",
     "description": "<p>Suppose that a website contains two tables, the <code>Customers</code> table and the <code>Orders</code> table. Write a SQL query to find all customers who never order anything.</p>",
@@ -239,7 +239,7 @@
   },
   {
     "id": 9,
-    "title": "196. Delete Duplicate Emails",
+    "title": "9. Delete Duplicate Emails",
     "difficulty": "Easy",
     "category": "Database",
     "description": "<p>Write a SQL query to <b>delete</b> all duplicate email entries in a table named <code>Person</code>, keeping only unique emails based on its smallest <b>Id</b>.</p>",
@@ -263,7 +263,7 @@
   },
   {
     "id": 10,
-    "title": "197. Rising Temperature",
+    "title": "10. Rising Temperature",
     "difficulty": "Easy",
     "category": "Database",
     "description": "<p>Write a SQL query to find all dates' Ids with higher temperature compared to its previous (yesterday's) dates.</p>",
