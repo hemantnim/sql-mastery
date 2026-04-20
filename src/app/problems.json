@@ -45,7 +45,7 @@
         ]
       }
     ],
-    "defaultQuery": "select p.firstname, p.lastname, a.city, a.state\nfrom person p\nleft join address a on p.personid = a.personid;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists person (personid int, lastname string, firstname string); create table if not exists address (addressid int, personid int, city string, state string); delete from person; delete from address; insert into person values (1, 'Wang', 'Allen'), (2, 'Alice', 'Bob'); insert into address values (1, 2, 'New York City', 'New York'), (2, 3, 'Leetcode', 'California');"
   },
   {
@@ -69,7 +69,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect max(salary) as secondhighestsalary\nfrom employee\nwhere salary < (select max(salary) from employee);",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists employee (id int, salary int); delete from employee; insert into employee values (1, 100), (2, 200), (3, 300);"
   },
   {
@@ -93,7 +93,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect distinct salary from employee order by salary desc limit 1 offset 1;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists employee (id int, salary int); delete from employee; insert into employee values (1, 100), (2, 200), (3, 300);"
   },
   {
@@ -117,7 +117,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect score, dense_rank() over (order by score desc) as 'rank' from scores;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists scores (id int, score decimal(10,2)); delete from scores; insert into scores values (1, 3.50), (2, 3.65), (3, 4.00), (4, 3.85), (5, 4.00), (6, 3.65);"
   },
   {
@@ -141,7 +141,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect distinct l1.num as consecutivenums from logs l1, logs l2, logs l3 where l1.id = l2.id - 1 and l2.id = l3.id - 1 and l1.num = l2.num and l2.num = l3.num;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists logs (id int, num int); delete from logs; insert into logs values (1, 1), (2, 1), (3, 1), (4, 2), (5, 1), (6, 2), (7, 2);"
   },
   {
@@ -173,7 +173,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect e1.name as employee from employee e1 join employee e2 on e1.managerid = e2.id where e1.salary > e2.salary;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists employee (id int, name string, salary int, managerid int); delete from employee; insert into employee values (1, 'Joe', 70000, 3), (2, 'Henry', 80000, 4), (3, 'Sam', 60000, null), (4, 'Max', 90000, null);"
   },
   {
@@ -197,7 +197,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect email from person group by email having count(email) > 1;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists person (id int, email string); delete from person; insert into person values (1, 'a@b.com'), (2, 'c@d.com'), (3, 'a@b.com');"
   },
   {
@@ -234,7 +234,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect name as customers from customers where id not in (select customerid from orders);",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists customers (id int, name string); create table if not exists orders (id int, customerid int); delete from customers; delete from orders; insert into customers values (1, 'Joe'), (2, 'Henry'), (3, 'Sam'), (4, 'Max'); insert into orders values (1, 3), (2, 1);"
   },
   {
@@ -258,7 +258,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\ndelete p1 from person p1, person p2 where p1.email = p2.email and p1.id > p2.id;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists person (id int, email string); delete from person; insert into person values (1, 'john@example.com'), (2, 'bob@example.com'), (3, 'john@example.com');"
   },
   {
@@ -286,7 +286,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect w1.id from weather w1, weather w2 where datediff(w1.recorddate, w2.recorddate) = 1 and w1.temperature > w2.temperature;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists weather (id int, recorddate date, temperature int); delete from weather; insert into weather values (1, '2015-01-01', 10), (2, '2015-01-02', 25), (3, '2015-01-03', 20), (4, '2015-01-04', 30);"
   },
   {
@@ -318,7 +318,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect player_id, min(event_date) as first_login from activity group by player_id;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists activity (player_id int, device_id int, event_date date, games_played int); delete from activity; insert into activity values (1, 2, '2016-03-01', 5), (1, 2, '2016-05-02', 6), (2, 3, '2017-06-25', 1);"
   },
   {
@@ -350,7 +350,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect player_id, device_id from activity where (player_id, event_date) in (select player_id, min(event_date) from activity group by player_id);",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists activity (player_id int, device_id int, event_date date, games_played int);"
   },
   {
@@ -382,7 +382,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect a1.player_id, a1.event_date, sum(a2.games_played) as games_played_so_far from activity a1 join activity a2 on a1.player_id = a2.player_id and a1.event_date >= a2.event_date group by a1.player_id, a1.event_date;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists activity (player_id int, device_id int, event_date date, games_played int);"
   },
   {
@@ -414,7 +414,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect name from employee where id in (select managerid from employee group by managerid having count(*) >= 5);",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists employee (id int, name string, department string, managerid int); delete from employee; insert into employee values (101, 'John', 'A', null), (102, 'Dan', 'A', 101), (103, 'James', 'A', 101), (104, 'Amy', 'A', 101), (105, 'Anne', 'A', 101), (106, 'Ron', 'B', 101);"
   },
   {
@@ -459,7 +459,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect e.name, b.bonus from employee e left join bonus b on e.empid = b.empid where b.bonus < 1000 or b.bonus is null;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists employee (empid int, name string, supervisor int, salary int); create table if not exists bonus (empid int, bonus int); delete from employee; delete from bonus; insert into employee values (1, 'John', 3, 1000), (2, 'Dan', 3, 2000), (3, 'Brad', null, 4000), (4, 'Thomas', 3, 4000); insert into bonus values (2, 500), (4, 2000);"
   },
   {
@@ -487,7 +487,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect name from customer where referee_id <> 2 or referee_id is null;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists customer (id int, name string, referee_id int); delete from customer; insert into customer values (1, 'Will', null), (2, 'Jane', null), (3, 'Alex', 2), (4, 'Bill', null), (5, 'Zack', 1), (6, 'Mark', 2);"
   },
   {
@@ -511,7 +511,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect customer_number from orders group by customer_number order by count(*) desc limit 1;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists orders (order_number int, customer_number int); delete from orders; insert into orders values (1, 1), (2, 2), (3, 3), (4, 3);"
   },
   {
@@ -547,7 +547,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect name, population, area from world where area >= 3000000 or population >= 25000000;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists world (name string, continent string, area int, population int, gdp bigint); delete from world; insert into world values ('Afghanistan', 'Asia', 652230, 25500100, 20343000), ('Albania', 'Europe', 28748, 2831741, 12960000), ('Algeria', 'Africa', 2381741, 37100000, 188681000);"
   },
   {
@@ -571,7 +571,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect class from courses group by class having count(distinct student) >= 5;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists courses (student string, class string); delete from courses; insert into courses values ('A', 'Math'), ('B', 'English'), ('C', 'Math'), ('D', 'Biology'), ('E', 'Math'), ('F', 'Computer'), ('G', 'Math'), ('H', 'Math'), ('I', 'Math');"
   },
   {
@@ -616,7 +616,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect round(ifnull(count(distinct requester_id, accepter_id) / count(distinct sender_id, send_to_id), 0), 2) as accept_rate from friendrequest, requestaccepted;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists friendrequest (sender_id int, send_to_id int, request_date date); create table if not exists requestaccepted (requester_id int, accepter_id int, accept_date date);"
   },
   {
@@ -640,7 +640,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect distinct a.seat_id from cinema a join cinema b on abs(a.seat_id - b.seat_id) = 1 and a.free = 1 and b.free = 1 order by a.seat_id;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists cinema (seat_id int, free int); delete from cinema; insert into cinema values (1, 1), (2, 0), (3, 1), (4, 1), (5, 1);"
   },
   {
@@ -694,7 +694,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect name from salesperson where sales_id not in (select sales_id from orders join company on orders.com_id = company.com_id where company.name = 'RED');",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists salesperson (sales_id int, name string); create table if not exists company (com_id int, name string); create table if not exists orders (order_id int, com_id int, sales_id int); delete from salesperson; delete from company; delete from orders; insert into salesperson values (1, 'John'), (2, 'Amy'), (3, 'Mark'), (4, 'Pam'), (5, 'Alex'); insert into company values (1, 'RED'), (2, 'ORANGE'), (3, 'YELLOW'); insert into orders values (1, 3, 4), (2, 1, 1), (3, 2, 2);"
   },
   {
@@ -718,7 +718,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect id, case when p_id is null then 'Root' when id in (select p_id from tree) then 'Inner' else 'Leaf' end as type from tree;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists tree (id int, p_id int); delete from tree; insert into tree values (1, null), (2, 1), (3, 1), (4, 2), (5, 2);"
   },
   {
@@ -746,7 +746,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect x, y, z, case when x + y > z and x + z > y and y + z > x then 'Yes' else 'No' end as triangle from triangle;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists triangle (x int, y int, z int); delete from triangle; insert into triangle values (13, 15, 30), (10, 20, 15);"
   },
   {
@@ -770,7 +770,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect round(min(sqrt(pow(p1.x - p2.x, 2) + pow(p1.y - p2.y, 2))), 2) as shortest from point_2d p1 join point_2d p2 on p1.x <> p2.x or p1.y <> p2.y;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists point_2d (x int, y int);"
   },
   {
@@ -790,7 +790,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect min(abs(p1.x - p2.x)) as shortest from point p1 join point p2 on p1.x <> p2.x;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists point (x int);"
   },
   {
@@ -810,7 +810,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect max(num) as num from (select num from number group by num having count(*) = 1) as t;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists number (num int); delete from number; insert into number values (8), (8), (3), (3), (1), (4), (5), (6);"
   },
   {
@@ -838,7 +838,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect * from cinema where id % 2 = 1 and description <> 'boring' order by rating desc;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists `cinema` (`id` int, `movie` varchar, `rating` float);"
   },
   {
@@ -862,7 +862,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect case when id % 2 = 1 and id = (select max(id) from seat) then id when id % 2 = 1 then id + 1 else id - 1 end as id, student from seat order by id;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists seat (id int, student string); delete from seat; insert into seat values (1, 'Abbot'), (2, 'Doris'), (3, 'Emerson'), (4, 'Green'), (5, 'Jeames');"
   },
   {
@@ -894,7 +894,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nupdate salary set sex = case when sex = 'm' then 'f' else 'm' end;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists salary (id int, name string, sex string, salary int); delete from salary; insert into salary values (1, 'A', 'm', 2500), (2, 'B', 'f', 1500), (3, 'C', 'm', 5500), (4, 'D', 'f', 500);"
   },
   {
@@ -927,7 +927,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect customer_id from customer group by customer_id having count(distinct product_key) = (select count(*) from product);",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists customer (customer_id int, product_key int); create table if not exists product (product_key int); delete from customer; delete from product; insert into customer values (1, 5), (2, 6), (3, 5), (3, 6), (1, 6); insert into product values (5), (6);"
   },
   {
@@ -976,7 +976,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect p.product_name, s.year, s.price from sales s join product p on s.product_id = p.product_id;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists sales (sale_id int, product_id int, year int, quantity int, price int); create table if not exists product (product_id int, product_name string); delete from sales; delete from product; insert into sales values (1, 100, 2008, 10, 5000), (2, 100, 2009, 12, 5000), (7, 200, 2011, 15, 9000); insert into product values (100, 'Nokia'), (200, 'Apple'), (300, 'Samsung');"
   },
   {
@@ -1012,7 +1012,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect product_id, sum(quantity) as total_quantity from sales group by product_id;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists sales (sale_id int, product_id int, year int, quantity int, price int); delete from sales; insert into sales values (1, 100, 2008, 10, 5000), (2, 100, 2009, 12, 5000), (7, 200, 2011, 15, 9000);"
   },
   {
@@ -1048,7 +1048,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect product_id, year as first_year, quantity, price from sales where (product_id, year) in (select product_id, min(year) from sales group by product_id);",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists sales (sale_id int, product_id int, year int, quantity int, price int); delete from sales; insert into sales values (1, 100, 2008, 10, 5000), (2, 100, 2009, 12, 5000), (7, 200, 2011, 15, 9000);"
   },
   {
@@ -1089,7 +1089,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect p.project_id, round(avg(e.experience_years), 2) as average_years from project p join employee e on p.employee_id = e.employee_id group by p.project_id;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists project (project_id int, employee_id int); create table if not exists employee (employee_id int, name string, experience_years int); delete from project; delete from employee; insert into project values (1, 1), (1, 2), (1, 3), (2, 1), (2, 4); insert into employee values (1, 'Khaled', 3), (2, 'Ali', 2), (3, 'John', 1), (4, 'Doe', 2);"
   },
   {
@@ -1113,7 +1113,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect project_id from project group by project_id having count(employee_id) = (select count(employee_id) from project group by project_id order by count(employee_id) desc limit 1);",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists project (project_id int, employee_id int); delete from project; insert into project values (1, 1), (1, 2), (1, 3), (2, 1), (2, 4);"
   },
   {
@@ -1154,7 +1154,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect p.project_id, e.employee_id from project p join employee e on p.employee_id = e.employee_id where (p.project_id, e.experience_years) in (select p2.project_id, max(e2.experience_years) from project p2 join employee e2 on p2.employee_id = e2.employee_id group by p2.project_id);",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists project (project_id int, employee_id int); create table if not exists employee (employee_id int, name string, experience_years int); delete from project; delete from employee; insert into project values (1, 1), (1, 2), (1, 3), (2, 1), (2, 4); insert into employee values (1, 'Khaled', 3), (2, 'Ali', 2), (3, 'John', 3), (4, 'Doe', 2);"
   },
   {
@@ -1194,7 +1194,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect seller_id from sales group by seller_id having sum(price) = (select sum(price) from sales group by seller_id order by sum(price) desc limit 1);",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists sales (seller_id int, product_id int, buyer_id int, sale_date date, quantity int, price int);"
   },
   {
@@ -1235,7 +1235,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect distinct buyer_id from sales join product using(product_id) where product_name = 'S8' and buyer_id not in (select buyer_id from sales join product using(product_id) where product_name = 'iPhone');",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists product (product_id int, product_name string); create table if not exists sales (seller_id int, product_id int, buyer_id int); delete from product; delete from sales; insert into product values (1, 'S8'), (2, 'iPhone'), (3, 'G3'); insert into sales values (1, 1, 1), (1, 2, 2), (2, 1, 3), (3, 3, 3);"
   },
   {
@@ -1272,7 +1272,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect product_id, product_name from product join sales using(product_id) group by product_id having min(sale_date) >= '2019-01-01' and max(sale_date) <= '2019-03-31';",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists product (product_id int, product_name varchar); create table if not exists sales (product_id int, sale_date date);"
   },
   {
@@ -1300,7 +1300,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect student_id, min(course_id) as course_id, grade from enrollments where (student_id, grade) in (select student_id, max(grade) from enrollments group by student_id) group by student_id, grade order by student_id;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists enrollments (student_id int, course_id int, grade int); delete from enrollments; insert into enrollments values (2, 2, 95), (2, 3, 95), (1, 1, 90), (1, 2, 99), (3, 1, 80), (3, 2, 75), (3, 3, 82);"
   },
   {
@@ -1336,7 +1336,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect extra as report_reason, count(distinct post_id) as report_count from actions where action_date = '2019-07-04' and action = 'report' group by extra;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists actions (user_id int, post_id int, action_date date, action enum, extra varchar);"
   },
   {
@@ -1364,7 +1364,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect business_id from events e join (select event_type, avg(occurences) as avg_occ from events group by event_type) t on e.event_type = t.event_type where e.occurences > t.avg_occ group by business_id having count(*) > 1;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists events (business_id int, event_type string, occurences int); delete from events; insert into events values (1, 'reviews', 7), (3, 'reviews', 3), (1, 'ads', 11), (2, 'ads', 7), (3, 'ads', 6), (1, 'page views', 3), (2, 'page views', 12);"
   },
   {
@@ -1396,7 +1396,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect activity_date as day, count(distinct user_id) as active_users from activity where activity_date > '2019-06-27' and activity_date <= '2019-07-27' group by activity_date;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists activity (user_id int, session_id int, activity_date date, activity_type string); delete from activity; insert into activity values (1, 1, '2019-07-20', 'open_session'), (2, 4, '2019-07-20', 'open_session'), (2, 4, '2019-07-21', 'send_message'), (3, 2, '2019-07-21', 'open_session');"
   },
   {
@@ -1428,7 +1428,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect round(ifnull(count(distinct session_id) / count(distinct user_id), 0), 2) as average_sessions_per_user from activity where activity_date > '2019-06-27' and activity_date <= '2019-07-27';",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists activity (user_id int, session_id int, activity_date date, activity_type enum);"
   },
   {
@@ -1460,7 +1460,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect distinct author_id as id from views where author_id = viewer_id order by author_id;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists views (article_id int, author_id int, viewer_id int, view_date date);"
   },
   {
@@ -1488,7 +1488,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect product_id, 10 as price from products group by product_id having min(change_date) > '2019-08-16' union select product_id, new_price from products where (product_id, change_date) in (select product_id, max(change_date) from products where change_date <= '2019-08-16' group by product_id);",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists products (product_id int, new_price int, change_date date);"
   },
   {
@@ -1520,7 +1520,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect round(100 * sum(case when order_date = customer_pref_delivery_date then 1 else 0 end) / count(*), 2) as immediate_percentage from delivery;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists delivery (delivery_id int, customer_id int, order_date date, customer_pref_delivery_date date);"
   },
   {
@@ -1552,7 +1552,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect round(100 * sum(case when order_date = customer_pref_delivery_date then 1 else 0 end) / count(*), 2) as immediate_percentage from delivery where (customer_id, order_date) in (select customer_id, min(order_date) from delivery group by customer_id);",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists delivery (delivery_id int, customer_id int, order_date date, customer_pref_delivery_date date);"
   },
   {
@@ -1580,7 +1580,7 @@
         ]
       }
     ],
-    "defaultQuery": "-- write your query here\nselect id, sum(case when month = 'Jan' then revenue else null end) as jan_revenue, sum(case when month = 'Feb' then revenue else null end) as feb_revenue, sum(case when month = 'Mar' then revenue else null end) as mar_revenue, sum(case when month = 'Apr' then revenue else null end) as apr_revenue, sum(case when month = 'May' then revenue else null end) as may_revenue, sum(case when month = 'Jun' then revenue else null end) as jun_revenue, sum(case when month = 'Jul' then revenue else null end) as jul_revenue, sum(case when month = 'Aug' then revenue else null end) as aug_revenue, sum(case when month = 'Sep' then revenue else null end) as sep_revenue, sum(case when month = 'Oct' then revenue else null end) as oct_revenue, sum(case when month = 'Nov' then revenue else null end) as nov_revenue, sum(case when month = 'Dec' then revenue else null end) as dec_revenue from department group by id;",
+    "defaultQuery": "-- write your query here\n",
     "setupSql": "create table if not exists department (id int, revenue int, month string); delete from department; insert into department values (1, 8000, 'Jan'), (2, 9000, 'Jan'), (3, 10000, 'Feb'), (1, 7000, 'Feb'), (1, 6000, 'Mar');"
   },
   {
